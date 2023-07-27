@@ -15,80 +15,6 @@ import KakaoLogin from "../../pages/Login/KakaoLogin";
 import NaverLogin from "../../pages/Login/NaverLogin";
 import GoogleLogin from "../../pages/Login/GoogleLogin";
 
-const HeaderStyle = styled.div`
-    z-index: 99999;
-  position: fixed;
-  z-index: 10;
-  background-color: #ffffff;
-  width: 100%;
-  border-bottom: 1px solid #e4e5ed;
-
-  .header {
-    height: 74px;
-    width: 1200px;
-    margin: 0 auto;
-    padding: 0 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .login-container {
-    display: flex;
-    align-items: center;
-    h1 {
-      margin-bottom: 5px;
-      margin-right: 10px;
-      color: gray;
-      font-weight: 700;
-    }
-  }
-  .login-button {
-    width: 40px;
-    cursor: pointer;
-    margin: 0 auto;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    img {
-      width: 100%;
-      //   object-fit: cover;
-    }
-  }
-
-  .profile {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    transition: 0.2s all ease-out;
-
-    img {
-      width: 100%;
-      height: 100%;
-      border-radius: 100%;
-    }
-  }
-  .profile: hover {
-    cursor: pointer;
-    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
-  }
-
-  .login {
-    position: relative;
-    padding-left: 40px;
-  }
-
-  .admin {
-    font-size: 10px;
-    margin-top: 2px;
-    color: gray;
-    text-decoration: underline;
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-  }
-`;
-
 const items: MenuProps["items"] = [
   {
     key: "1",
@@ -259,3 +185,76 @@ const Header = () => {
 };
 
 export default Header;
+
+const HeaderStyle = styled.header`
+  position: fixed;
+  z-index: 10;
+  background-color: #ffffff;
+  width: 100%;
+  border-bottom: 1px solid #e4e5ed;
+
+  .header {
+    height: 74px;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .login-container {
+    display: flex;
+    align-items: center;
+    h1 {
+      margin-bottom: 5px;
+      margin-right: 10px;
+      color: gray;
+      font-weight: 700;
+    }
+  }
+  .login-button {
+    width: 40px;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    img {
+      width: 100%;
+      //   object-fit: cover;
+    }
+  }
+
+  .profile {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    transition: 0.2s all ease-out;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+    }
+  }
+  .profile: hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+  }
+
+  .login {
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .admin {
+    font-size: 10px;
+    margin-top: 2px;
+    color: gray;
+    text-decoration: underline;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+  }
+`;
