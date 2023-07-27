@@ -24,78 +24,6 @@ import { useQuery } from "react-query";
 import { getFavorites } from "../../api/favorites";
 import Spinner from "../../components/Common/spinner";
 
-const MainStyle = styled.div`
-  padding: 115px 16px 140px 16px;
-  
-  .tags {
-    width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-  }
-
-  .tag {
-    font-size: 17px;
-    font-weight: bold;
-    width: 7rem;
-    height: 7rem;
-    border: 1px solid #e4e5ed;;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: ${colors.button};
-    transition: 0.2s all ease-out;
-  }
-
-  .tag:hover{
-    font-size:19px;
-  }
-
-  .contents-container {
-    width: 100%;
-    position: relative;
-  }
-
-  .content-item {
-    cursor: pointer;
-    position: relative;
-
-    img {
-      transition:  0.2s all ease-out;
-      transform 0.3s ease 0s;
-    }
-    img:hover {
-      transform: scale(1.005);
-      filter: brightness(0.8);
-    }
-  }
-  }
-
-  .load{
-    position: absolute,
-    margin: 0 auto;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items:center;
-  }
-`;
-
-const TagInputWrapper = styled.div`
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  margin-bottom : 10px;
-`;
-
-const TagInput = styled.input`
-  border: 1px solid yellow;
-  &:focus {
-    outline: 1px solid yellow;
-  }
-`;
-
 const Main = () => {
   const navigate = useNavigate();
   // const [posts, setPosts] = useState<Portfolio>([]);
@@ -171,7 +99,12 @@ const Main = () => {
     <MainStyle>
       <section className="main">
         <TagInputWrapper>
-            <TagInput placeholder="태그를 입력 후 엔터" value={tagValue} onChange={onChangeTextValue} onKeyPress={handleOnKeyPress}/>
+          <TagInput
+            placeholder="태그를 입력 후 엔터"
+            value={tagValue}
+            onChange={onChangeTextValue}
+            onKeyPress={handleOnKeyPress}
+          />
         </TagInputWrapper>
         <div className="tags">
           <button className="tag" onClick={() => onClickType(0)}>
@@ -193,12 +126,12 @@ const Main = () => {
             #이모티콘
           </button>
         </div>
-        
+
         <div className="contents-container" id="scrollArea">
           <Masonry columns={3} spacing={2}>
             {searchFlag === true ? ( // 태그 검색할 경우
               getTag === undefined ? (
-                <Spinner/> // 태그 정보를 불러오기 전
+                <Spinner /> // 태그 정보를 불러오기 전
               ) : (
                 getTag.data.map((data: any, index: number) => (
                   <div
@@ -280,3 +213,75 @@ const Main = () => {
 };
 
 export default Main;
+
+const MainStyle = styled.div`
+  padding: 115px 16px 140px 16px;
+  
+  .tags {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .tag {
+    font-size: 17px;
+    font-weight: bold;
+    width: 7rem;
+    height: 7rem;
+    border: 1px solid #e4e5ed;;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: ${colors.button};
+    transition: 0.2s all ease-out;
+  }
+
+  .tag:hover{
+    font-size:19px;
+  }
+
+  .contents-container {
+    width: 100%;
+    position: relative;
+  }
+
+  .content-item {
+    cursor: pointer;
+    position: relative;
+
+    img {
+      transition:  0.2s all ease-out;
+      transform 0.3s ease 0s;
+    }
+    img:hover {
+      transform: scale(1.005);
+      filter: brightness(0.8);
+    }
+  }
+  }
+
+  .load{
+    position: absolute,
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items:center;
+  }
+`;
+
+const TagInputWrapper = styled.div`
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+`;
+
+const TagInput = styled.input`
+  border: 1px solid yellow;
+  &:focus {
+    outline: 1px solid yellow;
+  }
+`;
