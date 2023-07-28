@@ -91,7 +91,11 @@ const Main = () => {
         </button>
       </nav>
 
-      <div className="contents-container" id="scrollArea">
+      <div
+        className="contents-container"
+        id="scrollArea"
+        data-testid="contents"
+      >
         <Masonry columns={3} spacing={2}>
           {searchFlag === true ? ( // 태그 검색할 경우
             getTag === undefined ? (
