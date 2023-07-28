@@ -19,128 +19,6 @@ import {
 import Toast from "../../components/Common/toast";
 import Spinner from "../../components/Common/spinner";
 
-const PageStyle = styled.div`
-  padding: 135px 0px 40px 0px;
-  color: ${colors.text};
-  .images-container {
-    height: 450px;
-    display: flex;
-    overflow: hidden;
-  }
-
-  .middle-section{
-    position : relative;
-    width : 100%;
-    height : 100%;
-  }
-
-  .bottom-section {
-    width: 1200px;
-    margin: 0 auto;
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: ${colors.bgcolor};
-    padding: 20px;
-    border-radius: 8px;
-  }
-
-  .artist-section {
-    display: flex;
-    // justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-
-  .artist-img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: gray;
-    margin-right: 20px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-    }
-  }
-
-  .artist-info {
-    text-align: center;
-  }
-
-  .artist-info-name {
-    font-size: 18px;
-  }
-
-  /* .inquiry-button {
-    color: ${colors.text};
-    background-color: ${colors.button};
-    padding: 1px 6px;
-    width: 269px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 7px;
-    font-weight: bold;
-    font-size: 16px;
-    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
-    cursor: pointer;
-    transition: 0.2s all ease-out;
-  }
-  .inquiry-button:hover {
-    filter: brightness(90%);
-  } */
-
-  .modal-info {
-    .modal-info-top {
-      width: 300px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-    }
-    .modal-info-type {
-      color: rgb(114, 117, 133);
-      margin: 0px;
-      font-weight: normal;
-      font-size: 14px;
-    }
-    .modal-info-title {
-      margin-top: 8px;
-      font-size: 20px;
-      line-height: 31px;
-      font-weight: 700;
-      color: rgb(48, 52, 65);
-    }
-    .item-heart {
-      position: absolute;
-      top: 0px;
-      right: 30px;
-      transition: 0.2s all ease-out;
-      // background: red;
-      cursor: pointer;
-      color: black;
-    }
-
-    .item-heart:hover {
-      transform: scale(1.1);
-    }
-    .modal-info-tags {
-      margin: 24px 0px 0px;
-      font-weight: normal;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 14px 24px 0 0;
-    }
-  }
-`;
 const PortfolioDetail = () => {
   let { id } = useParams();
   const userNum = Number(localStorage.getItem("userId"));
@@ -260,29 +138,28 @@ const PortfolioDetail = () => {
   };
 
   const toastProps_1 = {
-    title : "문의하기",
-    content : "디자인을 의뢰하고 싶으시면 문의하기 버튼을 클릭하여 문의해 주세요",
-    top_pos : -50,
-    right_pos : 30,
-    start_time : 500,
-  }
+    title: "문의하기",
+    content:
+      "디자인을 의뢰하고 싶으시면 문의하기 버튼을 클릭하여 문의해 주세요",
+    top_pos: -50,
+    right_pos: 30,
+    start_time: 500,
+  };
   const toastProps_2 = {
-    title : "작가페이지",
-    content : "더 다양한 포트폴리오와 상품을 확인하고 싶으시다면 작가 이름을 클릭해 주세요",
-    top_pos : -50,
-    right_pos : 30,
-    start_time : 5000,
-  }
+    title: "작가페이지",
+    content:
+      "더 다양한 포트폴리오와 상품을 확인하고 싶으시다면 작가 이름을 클릭해 주세요",
+    top_pos: -50,
+    right_pos: 30,
+    start_time: 5000,
+  };
 
   return (
-
     <PageStyle>
       {User === undefined || Info === undefined ? (
-        <Spinner/>
+        <Spinner />
       ) : (
         <>
-            
-            
           <div className="images-container">
             <ImageSwiper data={imgInfo} />
           </div>
@@ -302,8 +179,8 @@ const PortfolioDetail = () => {
               </div>
             </div>
             <div className="middle-section">
-                <Toast props={toastProps_2} />
-                <Toast props={toastProps_1} />
+              <Toast props={toastProps_2} />
+              <Toast props={toastProps_1} />
             </div>
             <div className="right-section">
               <div
@@ -341,3 +218,126 @@ const PortfolioDetail = () => {
 };
 
 export default PortfolioDetail;
+
+const PageStyle = styled.div`
+  padding: 135px 0px 40px 0px;
+  color: ${colors.text};
+  .images-container {
+    height: 450px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .middle-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bottom-section {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: ${colors.bgcolor};
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .artist-section {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .artist-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: gray;
+    margin-right: 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .artist-info {
+    text-align: center;
+  }
+
+  .artist-info-name {
+    font-size: 18px;
+  }
+
+  /* .inquiry-button {
+    color: ${colors.text};
+    background-color: ${colors.button};
+    padding: 1px 6px;
+    width: 269px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 16px;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+    cursor: pointer;
+    transition: 0.2s all ease-out;
+  }
+  .inquiry-button:hover {
+    filter: brightness(90%);
+  } */
+
+  .modal-info {
+    .modal-info-top {
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .modal-info-type {
+      color: rgb(114, 117, 133);
+      margin: 0px;
+      font-weight: normal;
+      font-size: 14px;
+    }
+    .modal-info-title {
+      margin-top: 8px;
+      font-size: 20px;
+      line-height: 31px;
+      font-weight: 700;
+      color: rgb(48, 52, 65);
+    }
+    .item-heart {
+      position: absolute;
+      top: 0px;
+      right: 30px;
+      transition: 0.2s all ease-out;
+      // background: red;
+      cursor: pointer;
+      color: black;
+    }
+
+    .item-heart:hover {
+      transform: scale(1.1);
+    }
+    .modal-info-tags {
+      margin: 24px 0px 0px;
+      font-weight: normal;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 14px 24px 0 0;
+    }
+  }
+`;

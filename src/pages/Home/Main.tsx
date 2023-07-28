@@ -3,7 +3,6 @@ import styled from "styled-components";
 import colors from "../../assets/colors";
 import Masonry from "@mui/lab/Masonry";
 import { useInView } from "react-intersection-observer";
-import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 import {
   Key,
@@ -168,9 +167,6 @@ const Main = () => {
             )
           ) : null}
         </Masonry>
-        {/* <div className="load" ref={ref}>
-            {load && <CircularProgress color="inherit" />}
-          </div> */}
       </div>
     </MainStyle>
   );
