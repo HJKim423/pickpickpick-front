@@ -11,6 +11,7 @@
 
 
 ### 배포 URL
+** 현재 배포 비용 이슈로 서버가 종료되었습니다. **
 - http://www.pppick.store
 - 관리자 페이지 - http://www.pppick.store/admin/login
   - 관리자 계정 - ID : admin / Password : admin 
